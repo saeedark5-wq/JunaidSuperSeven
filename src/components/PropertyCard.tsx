@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bed, Bath, Move, MapPin, MessageCircle, Heart, Building2 } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { Bed, Bath, Move, MapPin, Heart, Building2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Property, generateWhatsAppUrl, WHATSAPP_MESSAGE } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { Property, generateWhatsAppUrl, WHATSAPP_MESSAGE } from "@/lib/utils"
 
 interface PropertyCardProps {
   property: Property
@@ -104,7 +104,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
             className="mt-auto"
           >
             <Button variant="whatsapp" className="w-full gap-2">
-              <MessageCircle className="w-4 h-4" />
+              <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={16} height={16} className="w-4 h-4" />
               Inquiry via WhatsApp
             </Button>
           </a>

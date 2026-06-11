@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { MessageCircle, Award, Shield, Target, TrendingUp, X } from "lucide-react"
+import { Award, Shield, Target, TrendingUp, X } from "lucide-react"
 import { AGENT_NAME, generateWhatsAppUrl, WHATSAPP_MESSAGE } from "@/lib/utils"
 import Image from "next/image"
 
@@ -104,7 +104,7 @@ export default function AboutSection() {
               rel="noopener noreferrer"
             >
               <Button variant="whatsapp" size="lg" className="gap-3">
-                <MessageCircle className="w-5 h-5" />
+                <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} className="w-5 h-5" />
                 Discuss Your Requirements
               </Button>
             </a>

@@ -11,8 +11,8 @@ import {
   LogOut,
   Shield,
   Building2,
-  MessageCircle,
 } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -454,7 +454,7 @@ export default function AdminPage() {
                     className="p-2 rounded-lg text-green-400 hover:bg-green-500/10 transition-all"
                     title="Test WhatsApp message"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={16} height={16} className="w-4 h-4" />
                   </a>
                   <button
                     onClick={() => handleEdit(property)}

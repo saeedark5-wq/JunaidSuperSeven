@@ -10,7 +10,6 @@ import {
   Bath,
   Move,
   MapPin,
-  MessageCircle,
   ArrowLeft,
   ChevronLeft,
   ChevronRight,
@@ -204,7 +203,7 @@ export default function PropertyDetailPage() {
               rel="noopener noreferrer"
             >
               <Button variant="whatsapp" size="xl" className="w-full gap-3 text-base">
-                <MessageCircle className="w-5 h-5" />
+                <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} className="w-5 h-5" />
                 Inquire About This Property on WhatsApp
               </Button>
             </a>

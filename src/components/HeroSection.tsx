@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { MessageCircle, ArrowDown, ChevronRight } from "lucide-react"
+import { ArrowDown, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import StatsSection from "@/components/StatsSection"
 import { generateWhatsAppUrl, WHATSAPP_MESSAGE, AGENT_NAME } from "@/lib/utils"
@@ -71,7 +71,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
           >
             <Button variant="whatsapp" size="xl" className="gap-3 w-full sm:w-auto text-base">
-              <MessageCircle className="w-5 h-5" />
+              <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} className="w-5 h-5" />
               WhatsApp Inquiry
             </Button>
           </a>
