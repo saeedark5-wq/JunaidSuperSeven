@@ -32,7 +32,7 @@ export default function AboutSection() {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="/images/Junaid Ali.jfif"
+                src="/images/Junaid Ali.jpg"
                 alt={AGENT_NAME}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -130,7 +130,7 @@ export default function AboutSection() {
               <X className="w-5 h-5" />
             </button>
             <Image
-              src="/images/Broker Card.jfif"
+              src="/images/Broker Card.jpg"
               alt="RERA Certificate"
               width={800}
               height={600}

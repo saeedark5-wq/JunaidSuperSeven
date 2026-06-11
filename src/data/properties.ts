@@ -37,7 +37,7 @@ export const defaultProperties: Property[] = [
     type: "Buy",
     community: "The Springs",
     images: [
-      "/images/the-spring-prime-location.jfif",
+      "/images/the-spring-prime-location.jpg",
       "/images/the spring Villa b.webp",
       "/images/the spring Villa 1st floor .webp",
       "/images/the spring Villa 1st floor a.webp",
@@ -73,7 +73,7 @@ export const defaultProperties: Property[] = [
     type: "Buy",
     community: "International City",
     images: [
-      "/images/persia-culster.jfif",
+      "/images/persia-culster.jpg",
       "/images/International City Persia  Cluster balcony view b.webp",
       "/images/International City Persia  Cluster kitchen.webp",
       "/images/International City Persia  Cluster living hall.webp",

@@ -13,7 +13,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/super-seven-hero.jfif"
+          src="/images/super-seven-hero.jpg"
           alt="Dubai Skyline"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
