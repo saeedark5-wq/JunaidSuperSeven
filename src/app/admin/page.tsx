@@ -58,7 +58,7 @@ export default function AdminPage() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [passwordError, setPasswordError] = useState(false)
 
-  const ADMIN_PASSWORD = "admin123"
+  const ADMIN_PASSWORD = "Junaid1996"
 
   useEffect(() => {
     const stored = localStorage.getItem("junaid_admin_properties")
@@ -201,7 +201,7 @@ export default function AdminPage() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               {passwordError && (
-                <p className="text-red-400 text-xs mt-1">Incorrect password. Try &quot;admin123&quot;</p>
+                <p className="text-red-400 text-xs mt-1">Incorrect password. Try &quot;Junaid1996&quot;</p>
               )}
             </div>
             <Button type="submit" variant="gold" className="w-full h-12">
