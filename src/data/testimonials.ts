@@ -54,4 +54,13 @@ export const testimonials: Testimonial[] = [
       "Junaid's honesty and professionalism set him apart. He didn't just sell me a property; he educated me about the market and helped me make an informed decision. My investment is already showing great returns.",
     rating: 5,
   },
+  {
+    id: "6",
+    name: "Daud Khan",
+    role: "Buyer",
+    location: "UAE",
+    content:
+      "Junaid provided excellent service and helped me find the perfect property. His knowledge of the Dubai market and dedication to his clients is truly commendable. Highly recommended.",
+    rating: 5,
+  },
 ]
