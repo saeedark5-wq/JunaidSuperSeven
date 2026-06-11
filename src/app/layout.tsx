@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "Super Seven Real Estate Brokers",
     "Dubai property",
   ],
+  icons: {
+    icon: "/images/super seven logo.jpg",
+  },
   openGraph: {
     title: "Junaid Ali | Dubai Real Estate Expert",
     description:
@@ -47,7 +50,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <link rel="icon" href="/images/super seven logo.jpg" />
       </head>
       <body className="bg-black text-white antialiased">
         <Navbar />
