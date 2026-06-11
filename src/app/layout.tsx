@@ -29,9 +29,6 @@ export const metadata: Metadata = {
     "Super Seven Real Estate Brokers",
     "Dubai property",
   ],
-  icons: {
-    icon: "/images/super seven logo.jpg",
-  },
   openGraph: {
     title: "Junaid Ali | Dubai Real Estate Expert",
     description:
