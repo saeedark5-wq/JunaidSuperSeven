@@ -129,7 +129,7 @@ export default function Navbar() {
                   href={generateWhatsAppUrl(WHATSAPP_MESSAGE())}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 bg-green-500 rounded-lg text-black font-semibold"
+                  className="flex items-center gap-3 px-4 py-3 text-white/70 hover:text-gold hover:bg-white/5 rounded-lg transition-colors"
                 >
                   <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={16} height={16} className="w-4 h-4" />
                   WhatsApp Inquiry

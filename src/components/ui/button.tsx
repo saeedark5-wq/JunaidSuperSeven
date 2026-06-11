@@ -15,7 +15,7 @@ const buttonVariants = cva(
         ghost: "text-white/70 hover:text-gold hover:bg-white/5",
         link: "text-gold underline-offset-4 hover:underline",
         gold: "gold-bg text-black font-bold gold-glow hover:gold-glow",
-        whatsapp: "bg-green-500 text-black font-bold shadow-2xl hover:bg-green-400 shadow-green-500/30",
+        whatsapp: "text-white/70 hover:text-gold hover:bg-white/5",
       },
       size: {
         default: "h-10 px-5 py-2",
