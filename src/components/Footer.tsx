@@ -129,7 +129,7 @@ export default function Footer() {
       <div className="relative border-t border-white/10 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/40">
           <p>&copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
-          <p className="flex items-center gap-1">Designed &amp; Developed by <Image src="/images/ark.jpg" alt="ARK" width={16} height={16} className="w-4 h-4 inline-block rounded-full" /> Muhammad Saeed</p>
+          <p className="flex items-center gap-1">Designed &amp; Developed by <Image src="/images/ark.jfif" alt="ARK" width={20} height={20} className="w-5 h-5 inline-block rounded-full" unoptimized /> Muhammad Saeed</p>
         </div>
       </div>
     </footer>
