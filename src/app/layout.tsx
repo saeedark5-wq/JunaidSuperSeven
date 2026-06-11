@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/super seven logo.jpg" />
       </head>
       <body className="bg-black text-white antialiased">
         <Navbar />
