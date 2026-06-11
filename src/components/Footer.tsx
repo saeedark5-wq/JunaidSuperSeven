@@ -129,7 +129,9 @@ export default function Footer() {
       <div className="relative border-t border-white/10 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/40">
           <p>&copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
-          <p className="flex items-center gap-1">Designed &amp; Developed by <img src="/images/ark.jfif" alt="ARK" width="20" height="20" style={{ borderRadius: "50%", width: "20px", height: "20px", objectFit: "cover", display: "inline-block" }} /> Muhammad Saeed</p>
+          <a href="https://github.com/saeedark5-wq" target="_blank" rel="noopener noreferrer">
+            <img src="/images/ark.jfif" alt="ARK" style={{ height: "24px", width: "auto", display: "inline-block", verticalAlign: "middle" }} />
+          </a>
         </div>
       </div>
     </footer>
