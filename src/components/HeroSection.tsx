@@ -1,10 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowDown } from "lucide-react"
 import StatsSection from "@/components/StatsSection"
-import { generateWhatsAppUrl, WHATSAPP_MESSAGE, AGENT_NAME } from "@/lib/utils"
+import { AGENT_NAME } from "@/lib/utils"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -63,31 +62,6 @@ export default function HeroSection() {
           initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 lg:gap-4 mb-3 sm:mb-6 lg:mb-10"
-        >
-          <a
-            href={generateWhatsAppUrl(WHATSAPP_MESSAGE())}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto"
-          >
-            <Button variant="whatsapp" size="default" className="gap-1.5 sm:gap-2 w-full text-xs sm:text-sm md:text-base lg:text-lg text-white sm:h-10 md:h-12 lg:h-14 sm:px-6 md:px-8 lg:px-10">
-              <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} className="w-3.5 h-3.5 sm:w-4 md:w-5 sm:h-4 md:h-5" />
-              WhatsApp Inquiry
-            </Button>
-          </a>
-          <Link href="#properties" className="w-full sm:w-auto">
-            <Button variant="outline" size="default" className="gap-1.5 sm:gap-2 w-full text-xs sm:text-sm md:text-base lg:text-lg sm:h-10 md:h-12 lg:h-14 sm:px-6 md:px-8 lg:px-10">
-              View Properties
-              <ChevronRight className="w-3.5 h-3.5 sm:w-4 md:w-5 sm:h-4 md:h-5" />
-            </Button>
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         >
           <StatsSection />
         </motion.div>
