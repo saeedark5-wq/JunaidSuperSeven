@@ -12,6 +12,13 @@ export const PHONE = "+971 50 497 5208"
 export const AGENT_NAME = "Junaid Ali Afridi"
 export const COMPANY_NAME = "Super Seven Real Estate Brokers"
 export const OFFICE_ADDRESS = "Aldana II - Office No.3 - Dubai International City - Dubai"
+export const RERA_NUMBER = "25006"
+export const ORN_NUMBER = "23019"
+export const TRN_NUMBER = "100540951400003"
+export const DTCM_NUMBER = "7791"
+export const INSTAGRAM = "https://www.instagram.com/junaidafridi.realestate/"
+export const FACEBOOK = "https://www.facebook.com/junaid.afridi.1996/"
+export const TIKTOK = "https://www.tiktok.com/@junaidafridi.realestate"
 
 export const WHATSAPP_MESSAGE = (title?: string, location?: string) =>
   `Hello Junaid Ali, I am interested in this property:\n${title || "Property"}\nLocation: ${location || "Dubai"}\nPlease share full details, availability, and viewing schedule.`
