@@ -8,9 +8,9 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: "border-transparent bg-gold text-black",
-        secondary: "border-transparent bg-white/10 text-white",
+        secondary: "border-transparent bg-card text-foreground",
         destructive: "border-transparent bg-red-500/20 text-red-400",
-        outline: "text-white/70 border-white/20",
+        outline: "text-muted border-card-border",
         rent: "border-transparent bg-blue-500/20 text-blue-400",
         buy: "border-transparent bg-green-500/20 text-green-400",
         offplan: "border-transparent bg-purple-500/20 text-purple-400",

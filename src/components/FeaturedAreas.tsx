@@ -22,10 +22,10 @@ export default function FeaturedAreas() {
           className="text-center mb-12"
         >
           <Badge variant="outline" className="mb-4">Featured Locations</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Explore <span className="gold-gradient">Prime Areas</span>
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             Discover Dubai&apos;s most sought-after communities with expert guidance and market insights
           </p>
         </motion.div>
@@ -64,14 +64,14 @@ export default function FeaturedAreas() {
                 </div>
 
                 <div className="p-6">
-                  <p className="text-sm text-white/60 leading-relaxed mb-4">
+                  <p className="text-sm text-muted leading-relaxed mb-4">
                     {area.description}
                   </p>
 
                   <div className="glass rounded-xl p-4 mb-4">
                     <div className="flex items-start gap-3">
                       <TrendingUp className="w-5 h-5 text-gold mt-0.5 shrink-0" />
-                      <p className="text-sm text-white/80">{area.highlight}</p>
+                      <p className="text-sm text-foreground/80">{area.highlight}</p>
                     </div>
                   </div>
 

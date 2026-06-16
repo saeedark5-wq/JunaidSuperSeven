@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Phone, ChevronDown, Shield } from "lucide-react"
+import { Menu, X, Phone, ChevronDown, Shield, Sun, Moon } from "lucide-react"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { cn, COMPANY_NAME, PHONE, generateWhatsAppUrl, WHATSAPP_MESSAGE } from "@/lib/utils"
 import Link from "next/link"
@@ -20,6 +21,12 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -32,7 +39,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20"
+          ? "bg-background/80 backdrop-blur-xl border-b border-card-border shadow-lg shadow-black/20"
           : "bg-transparent"
       )}
     >
@@ -50,7 +57,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <p className="text-sm font-bold gold-gradient">{COMPANY_NAME}</p>
-              <p className="text-xs text-white/50">Junaid Ali &mdash; Real Estate Expert</p>
+              <p className={cn("text-xs", scrolled ? "text-muted" : "text-white/50")}>Junaid Ali &mdash; Real Estate Expert</p>
             </div>
           </Link>
 
@@ -59,7 +66,12 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-white/70 hover:text-gold transition-colors rounded-lg hover:bg-white/5"
+                className={cn(
+                  "px-4 py-2 text-sm transition-colors rounded-lg",
+                  scrolled
+                    ? "text-muted hover:text-gold hover:bg-card"
+                    : "text-white/70 hover:text-gold hover:bg-white/5"
+                )}
               >
                 {link.label}
               </Link>
@@ -69,7 +81,12 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${PHONE}`}
-              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm text-white/70 hover:text-gold transition-colors rounded-lg hover:bg-white/5"
+              className={cn(
+                "hidden md:flex items-center gap-2 px-4 py-2 text-sm transition-colors rounded-lg",
+                scrolled
+                  ? "text-muted hover:text-gold hover:bg-card"
+                  : "text-white/70 hover:text-gold hover:bg-white/5"
+              )}
             >
               <Phone className="w-4 h-4" />
               <span>{PHONE}</span>
@@ -78,19 +95,43 @@ export default function Navbar() {
               href={generateWhatsAppUrl(WHATSAPP_MESSAGE())}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm text-white/70 hover:text-gold transition-colors rounded-lg hover:bg-white/5"
+              className={cn(
+                "hidden md:flex items-center gap-2 px-4 py-2 text-sm transition-colors rounded-lg",
+                scrolled
+                  ? "text-muted hover:text-gold hover:bg-card"
+                  : "text-white/70 hover:text-gold hover:bg-white/5"
+              )}
             >
               <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} className="w-5 h-5" />
             </a>
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className={cn(
+                  "p-2 transition-colors rounded-lg",
+                  scrolled
+                    ? "text-muted hover:text-gold hover:bg-card"
+                    : "text-white/70 hover:text-gold hover:bg-white/5"
+                )}
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </button>
+            )}
             <Link href="/admin">
-              <Button variant="ghost" size="sm" className="hidden md:inline-flex gap-2">
+              <Button variant={scrolled ? "ghost" : "outline"} size="sm" className="hidden md:inline-flex gap-2">
                 <Shield className="w-4 h-4" />
                 Admin
               </Button>
             </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-white/70 hover:text-gold transition-colors"
+              className={cn(
+                "lg:hidden p-2 transition-colors",
+                scrolled
+                  ? "text-muted hover:text-gold"
+                  : "text-white/70 hover:text-gold"
+              )}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -104,7 +145,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-white/10 bg-black/95 backdrop-blur-xl"
+            className="lg:hidden border-t border-card-border bg-background/95 backdrop-blur-xl"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
@@ -112,7 +153,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-white/70 hover:text-gold hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-muted hover:text-gold hover:bg-card rounded-lg transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -120,7 +161,7 @@ export default function Navbar() {
               <div className="pt-4 space-y-2">
                 <a
                   href={`tel:${PHONE}`}
-                  className="flex items-center gap-3 px-4 py-3 bg-white/5 rounded-lg text-white/70 hover:text-gold transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 bg-card rounded-lg text-muted hover:text-gold transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   {PHONE}
@@ -129,7 +170,7 @@ export default function Navbar() {
                   href={generateWhatsAppUrl(WHATSAPP_MESSAGE())}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 text-white/70 hover:text-gold hover:bg-white/5 rounded-lg transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 text-muted hover:text-gold hover:bg-card rounded-lg transition-colors"
                 >
                   <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={16} height={16} className="w-4 h-4" />
                   WhatsApp Inquiry
@@ -137,7 +178,7 @@ export default function Navbar() {
                 <Link
                   href="/admin"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 bg-white/5 rounded-lg text-white/70 hover:text-gold transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 bg-card rounded-lg text-muted hover:text-gold transition-colors"
                 >
                   <Shield className="w-4 h-4" />
                   Admin Dashboard

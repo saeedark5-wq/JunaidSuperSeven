@@ -177,7 +177,7 @@ export default function AdminPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -188,12 +188,12 @@ export default function AdminPage() {
               <Shield className="w-8 h-8 text-black" />
             </div>
             <h1 className="text-2xl font-bold gold-gradient">Admin Dashboard</h1>
-            <p className="text-sm text-white/40 mt-1">Enter password to access</p>
+            <p className="text-sm text-muted-strong mt-1">Enter password to access</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm text-white/70 mb-1.5">Password</label>
+              <label className="block text-sm text-muted mb-1.5">Password</label>
               <Input
                 type="password"
                 placeholder="Enter admin password"
@@ -215,12 +215,12 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black pt-24 pb-16">
+    <div className="min-h-screen bg-background pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold gold-gradient">Admin Dashboard</h1>
-            <p className="text-sm text-white/40">Manage your property listings</p>
+            <p className="text-sm text-muted-strong">Manage your property listings</p>
           </div>
           <div className="flex items-center gap-3">
             <Button
@@ -257,7 +257,7 @@ export default function AdminPage() {
               className="overflow-hidden mb-8"
             >
               <div className="glass rounded-2xl p-6 sm:p-8">
-                <h2 className="text-lg font-semibold text-white mb-6">
+                <h2 className="text-lg font-semibold text-foreground mb-6">
                   {editingId ? "Edit Property" : "Add New Property"}
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -321,7 +321,7 @@ export default function AdminPage() {
                       <select
                         value={form.type}
                         onChange={(e) => setForm({ ...form, type: e.target.value as PropertyType })}
-                        className="flex h-10 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
+                        className="flex h-10 w-full rounded-lg border border-card-border bg-card px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
                       >
                         <option value="Rent">Rent</option>
                         <option value="Buy">Buy</option>
@@ -333,7 +333,7 @@ export default function AdminPage() {
                       <select
                         value={form.community}
                         onChange={(e) => setForm({ ...form, community: e.target.value as Community })}
-                        className="flex h-10 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
+                        className="flex h-10 w-full rounded-lg border border-card-border bg-card px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
                       >
                         <option value="International City">International City</option>
                         <option value="Downtown Dubai">Downtown Dubai</option>
@@ -352,7 +352,7 @@ export default function AdminPage() {
                         return (
                           <div key={i}>
                             <div className="flex items-center gap-2">
-                              <span className="text-xs text-white/30 w-6 shrink-0">#{i + 1}</span>
+                              <span className="text-xs text-muted-strong w-6 shrink-0">#{i + 1}</span>
                               <Input
                                 value={paths[i] || ""}
                                 onChange={(e) => {
@@ -368,7 +368,7 @@ export default function AdminPage() {
                         )
                       })}
                     </div>
-                    <p className="text-xs text-white/30 mt-2">
+                    <p className="text-xs text-muted-strong mt-2">
                       Enter image paths from the /public/images/ folder (e.g. /images/my-photo.jpg)
                     </p>
                   </div>
@@ -390,7 +390,7 @@ export default function AdminPage() {
                       onChange={(e) => setForm({ ...form, featured: e.target.checked })}
                       className="w-4 h-4 accent-gold"
                     />
-                    <span className="text-sm text-white/80">Mark as Featured Property</span>
+                    <span className="text-sm text-foreground">Mark as Featured Property</span>
                   </label>
 
                   <div className="flex gap-3 pt-2">
@@ -410,8 +410,8 @@ export default function AdminPage() {
         <div className="space-y-3">
           {properties.length === 0 ? (
             <div className="text-center py-20">
-              <Building2 className="w-16 h-16 text-white/10 mx-auto mb-4" />
-              <p className="text-white/40">No properties yet. Add your first property!</p>
+              <Building2 className="w-16 h-16 text-muted-strong mx-auto mb-4" />
+              <p className="text-muted-strong">No properties yet. Add your first property!</p>
             </div>
           ) : (
             properties.map((property, index) => (
@@ -429,8 +429,8 @@ export default function AdminPage() {
                     </Badge>
                     {property.featured && <Badge variant="featured">Featured</Badge>}
                   </div>
-                  <p className="text-sm font-medium text-white truncate">{property.title}</p>
-                  <p className="text-xs text-white/40">
+                  <p className="text-sm font-medium text-foreground truncate">{property.title}</p>
+                  <p className="text-xs text-muted-strong">
                     {property.location} &middot; {property.price}
                   </p>
                 </div>
@@ -441,7 +441,7 @@ export default function AdminPage() {
                     className={`p-2 rounded-lg transition-all ${
                       property.featured
                         ? "text-gold bg-gold/10"
-                        : "text-white/30 hover:text-gold hover:bg-white/5"
+                        : "text-muted-strong hover:text-gold hover:bg-card"
                     }`}
                     title={property.featured ? "Remove from featured" : "Mark as featured"}
                   >
@@ -458,14 +458,14 @@ export default function AdminPage() {
                   </a>
                   <button
                     onClick={() => handleEdit(property)}
-                    className="p-2 rounded-lg text-white/30 hover:text-gold hover:bg-white/5 transition-all"
+                    className="p-2 rounded-lg text-muted-strong hover:text-gold hover:bg-card transition-all"
                     title="Edit property"
                   >
                     <Edit3 className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => handleDelete(property.id)}
-                    className="p-2 rounded-lg text-white/30 hover:text-red-400 hover:bg-red-500/10 transition-all"
+                    className="p-2 rounded-lg text-muted-strong hover:text-red-400 hover:bg-red-500/10 transition-all"
                     title="Delete property"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -477,7 +477,7 @@ export default function AdminPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-xs text-white/20">
+          <p className="text-xs text-muted-strong">
             Properties are stored locally in your browser. Data persists until cleared.
           </p>
         </div>

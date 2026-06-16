@@ -48,7 +48,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
                 <div className="w-16 h-16 rounded-full gold-bg flex items-center justify-center mx-auto mb-3">
                   <Building2 className="w-8 h-8 text-black" />
                 </div>
-                <p className="text-sm text-white/40">Image Coming Soon</p>
+                <p className="text-sm text-black/60">Image Coming Soon</p>
               </div>
             </div>
           )}
@@ -68,17 +68,17 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
 
         <div className="p-5 flex-1 flex flex-col">
           <Link href={`/properties/${property.id}`}>
-            <h3 className="text-base font-semibold text-white mb-2 line-clamp-2 hover:text-gold transition-colors">
+            <h3 className="text-base font-semibold text-foreground mb-2 line-clamp-2 hover:text-gold transition-colors">
               {property.title}
             </h3>
           </Link>
 
           <div className="flex items-start gap-2 mb-4">
             <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-            <p className="text-sm text-white/50">{property.location}</p>
+            <p className="text-sm text-muted">{property.location}</p>
           </div>
 
-          <div className="flex items-center gap-4 mb-4 text-sm text-white/60">
+          <div className="flex items-center gap-4 mb-4 text-sm text-muted">
             <div className="flex items-center gap-1.5">
               <Bed className="w-4 h-4 text-gold" />
               <span>{property.bedrooms} {property.bedrooms === 1 ? "Bed" : "Beds"}</span>
@@ -93,7 +93,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
             </div>
           </div>
 
-          <p className="text-sm text-white/40 line-clamp-2 mb-4 flex-1">
+          <p className="text-sm text-muted-strong line-clamp-2 mb-4 flex-1">
             {property.description}
           </p>
 

@@ -47,11 +47,11 @@ export default function PropertyDetailPage() {
 
   if (!property) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-4 pt-24">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4 pt-24">
         <div className="text-center">
-          <Building2 className="w-16 h-16 text-white/10 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-white mb-2">Property Not Found</h1>
-          <p className="text-white/40 mb-6">This property may have been removed or is no longer available.</p>
+          <Building2 className="w-16 h-16 text-muted-strong mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-foreground mb-2">Property Not Found</h1>
+          <p className="text-muted-strong mb-6">This property may have been removed or is no longer available.</p>
           <Link href="/#properties">
             <Button variant="gold">Browse Properties</Button>
           </Link>
@@ -63,11 +63,11 @@ export default function PropertyDetailPage() {
   const images = property.images.filter((img) => !imgErrors[img])
 
   return (
-    <div className="min-h-screen bg-black pt-20 pb-16">
+    <div className="min-h-screen bg-background pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/#properties"
-          className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-sm text-muted hover:text-gold transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Properties
@@ -155,13 +155,13 @@ export default function PropertyDetailPage() {
             className="space-y-6"
           >
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
                 {property.title}
               </h1>
 
               <div className="flex items-start gap-2 mb-4">
                 <MapPin className="w-5 h-5 text-gold mt-0.5 shrink-0" />
-                <p className="text-white/60">{property.location}</p>
+                <p className="text-muted">{property.location}</p>
               </div>
 
               <p className="text-3xl font-bold gold-gradient mb-6">{property.price}</p>
@@ -170,27 +170,27 @@ export default function PropertyDetailPage() {
             <div className="grid grid-cols-3 gap-4">
               <div className="glass rounded-xl p-4 text-center">
                 <Bed className="w-5 h-5 text-gold mx-auto mb-1" />
-                <p className="text-lg font-bold text-white">{property.bedrooms}</p>
-                <p className="text-xs text-white/40">{property.bedrooms === 1 ? "Bedroom" : "Bedrooms"}</p>
+                <p className="text-lg font-bold text-foreground">{property.bedrooms}</p>
+                <p className="text-xs text-muted-strong">{property.bedrooms === 1 ? "Bedroom" : "Bedrooms"}</p>
               </div>
               <div className="glass rounded-xl p-4 text-center">
                 <Bath className="w-5 h-5 text-gold mx-auto mb-1" />
-                <p className="text-lg font-bold text-white">{property.bathrooms}</p>
-                <p className="text-xs text-white/40">{property.bathrooms === 1 ? "Bathroom" : "Bathrooms"}</p>
+                <p className="text-lg font-bold text-foreground">{property.bathrooms}</p>
+                <p className="text-xs text-muted-strong">{property.bathrooms === 1 ? "Bathroom" : "Bathrooms"}</p>
               </div>
               <div className="glass rounded-xl p-4 text-center">
                 <Move className="w-5 h-5 text-gold mx-auto mb-1" />
-                <p className="text-lg font-bold text-white">{property.area}</p>
-                <p className="text-xs text-white/40">Area</p>
+                <p className="text-lg font-bold text-foreground">{property.area}</p>
+                <p className="text-xs text-muted-strong">Area</p>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Description</h3>
-              <p className="text-white/60 leading-relaxed">{property.description}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Description</h3>
+              <p className="text-muted leading-relaxed">{property.description}</p>
             </div>
 
-            <div className="flex items-center gap-2 text-sm text-white/40">
+            <div className="flex items-center gap-2 text-sm text-muted-strong">
               <Calendar className="w-4 h-4" />
               <span>Listed on {property.createdAt}</span>
               <span className="mx-2">&middot;</span>
@@ -208,7 +208,7 @@ export default function PropertyDetailPage() {
               </Button>
             </a>
 
-            <p className="text-xs text-white/30 text-center">
+            <p className="text-xs text-muted-strong text-center">
               Click above to send a pre-filled message about this property directly to {property.type === "Off-plan" ? "Junaid Ali" : "the agent"}
             </p>
           </motion.div>

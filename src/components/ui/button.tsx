@@ -4,18 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default: "gold-bg text-black font-semibold hover:brightness-110 gold-glow",
-        destructive: "bg-red-600 text-white hover:bg-red-700",
+        destructive: "bg-red-600 text-foreground hover:bg-red-700",
         outline: "border border-gold text-gold hover:gold-bg hover:text-black",
-        secondary: "bg-white/10 text-white hover:bg-white/20",
-        ghost: "text-white/70 hover:text-gold hover:bg-white/5",
+        secondary: "bg-card text-foreground hover:bg-card-border",
+        ghost: "text-muted hover:text-gold hover:bg-card",
         link: "text-gold underline-offset-4 hover:underline",
         gold: "gold-bg text-black font-bold gold-glow hover:gold-glow",
-        whatsapp: "text-white/70 hover:text-gold hover:bg-white/5",
+        whatsapp: "bg-[#25D366] text-white font-semibold hover:bg-[#20BD5A] shadow-lg shadow-[#25D366]/25 hover:shadow-[#25D366]/40",
       },
       size: {
         default: "h-10 px-5 py-2",

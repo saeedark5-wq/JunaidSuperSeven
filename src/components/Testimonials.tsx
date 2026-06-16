@@ -18,10 +18,10 @@ export default function Testimonials() {
           className="text-center mb-12"
         >
           <Badge variant="outline" className="mb-4">Client Testimonials</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             What <span className="gold-gradient">Clients Say</span>
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             Trusted by investors and homebuyers from UAE, Pakistan, and around the world
           </p>
         </motion.div>
@@ -43,23 +43,23 @@ export default function Testimonials() {
                     <Star
                       key={i}
                       className={`w-4 h-4 ${
-                        i < testimonial.rating ? "text-yellow-400 fill-yellow-400" : "text-white/10"
+                        i < testimonial.rating ? "text-yellow-400 fill-yellow-400" : "text-muted-strong"
                       }`}
                     />
                   ))}
                 </div>
 
-                <p className="text-sm text-white/70 leading-relaxed mb-6 flex-1">
+                <p className="text-sm text-muted leading-relaxed mb-6 flex-1">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div className="flex items-center gap-3 pt-4 border-t border-card-border">
                   <div className="w-10 h-10 rounded-full gold-bg flex items-center justify-center text-black font-bold text-sm">
                     {testimonial.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">{testimonial.name}</p>
-                    <p className="text-xs text-white/40">{testimonial.role} &middot; {testimonial.location}</p>
+                    <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-xs text-muted-strong">{testimonial.role} &middot; {testimonial.location}</p>
                   </div>
                 </div>
               </div>

@@ -27,8 +27,8 @@ export default function BusinessHours() {
           <Clock className="w-5 h-5 text-black" />
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-white">Business Hours</h3>
-          <p className="text-xs text-white/40">Dubai Local Time (GST +4)</p>
+          <h3 className="text-lg font-semibold text-foreground">Business Hours</h3>
+          <p className="text-xs text-muted-strong">Dubai Local Time (GST +4)</p>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ export default function BusinessHours() {
             >
               <div className="flex items-center gap-2">
                 {isToday && <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />}
-                <span className={`text-sm ${isToday ? "text-gold font-medium" : "text-white/60"}`}>
+                <span className={`text-sm ${isToday ? "text-gold font-medium" : "text-muted"}`}>
                   {h.day}
                 </span>
               </div>
@@ -58,8 +58,8 @@ export default function BusinessHours() {
                   h.status === "closed"
                     ? "text-red-400"
                     : isToday
-                    ? "text-white"
-                    : "text-white/50"
+                    ? "text-foreground"
+                    : "text-muted"
                 }`}
               >
                 {h.time}

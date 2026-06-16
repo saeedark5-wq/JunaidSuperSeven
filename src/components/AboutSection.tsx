@@ -57,23 +57,23 @@ export default function AboutSection() {
           >
             <Badge variant="outline" className="mb-4">About Me</Badge>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Your Trusted <span className="gold-gradient">Dubai Real Estate</span> Expert
             </h2>
 
-            <p className="text-white/60 leading-relaxed mb-8">
-              {AGENT_NAME} is a dynamic and highly experienced real estate professional based in Dubai, UAE,
+            <p className="text-muted leading-relaxed mb-8">
+              {AGENT_NAME}, a dynamic and highly experienced real estate professional based in Dubai, UAE,
               with over 10 years of expertise in the property market. Originally from Pakistan, he has built
               a strong reputation for his deep knowledge, dedication, and client-focused approach.
               Specializing in Dubai&apos;s rapidly growing communities&mdash;especially International City, Warsan,
               Dubai Sports City, and Skycourts&mdash;he has successfully assisted countless clients in buying,
               selling, and renting properties across the city.
             </p>
-            <p className="text-white/50 leading-relaxed mb-8 text-sm">
+            <p className="text-muted leading-relaxed mb-8 text-sm">
               Known for his energetic work style and strong negotiation skills, he provides honest guidance
               and end-to-end support to investors, families, and first-time buyers. His mastery of Dubai&apos;s
               real estate landscape allows him to identify the best investment opportunities and deliver
-              maximum value to his clients. {AGENT_NAME} works with <strong className="text-white/80">Super Seven Real Estate Brokers</strong>,
+              maximum value to his clients. {AGENT_NAME} works with <strong className="text-foreground/80">Super Seven Real Estate Brokers</strong>,
                a RERA Certified brokerage. He is also a RERA Certified real estate professional dealing in Sales and Rentals all over Dubai.
             </p>
 
@@ -84,14 +84,14 @@ export default function AboutSection() {
                   <div
                     key={item.label}
                     onClick={item.label === "RERA Certified" ? () => setShowCertificate(true) : undefined}
-                    className={`glass rounded-xl p-4 flex items-start gap-3 ${item.label === "RERA Certified" ? "cursor-pointer hover:bg-white/[0.08] transition-colors" : ""}`}
+                    className={`glass rounded-xl p-4 flex items-start gap-3 ${item.label === "RERA Certified" ? "cursor-pointer hover:bg-card transition-colors" : ""}`}
                   >
                     <div className="w-10 h-10 rounded-lg gold-bg flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-black" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-white">{item.label}</p>
-                      <p className="text-xs text-white/40">{item.desc}</p>
+                      <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                      <p className="text-xs text-muted-strong">{item.desc}</p>
                     </div>
                   </div>
                 )
